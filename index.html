@@ -35,6 +35,7 @@
     <nav class="nav__menu" id="menu" aria-label="Principal">
       <a href="#solucoes">Soluções</a>
       <a href="modelos.html">Modelos</a>
+      <a href="#clientes">Clientes</a>
       <a href="#como">Como funciona</a>
       <a href="#teste">Diagnóstico</a>
       <a href="#planos">Planos</a>
@@ -289,27 +290,40 @@
       <article class="plan">
         <h3>Essencial</h3>
         <p class="plan__desc">Para aparecer no Google agora.</p>
-        <p class="plan__price">[PREÇO]</p>
+        <div class="censor" role="img" aria-label="Preço censurado: chame no WhatsApp para saber"><span class="censor__bar" aria-hidden="true">R$ ███,██</span><span class="censor__stamp" aria-hidden="true">CENSURADO</span></div><p class="censor__hint">👀 Preço revelado no WhatsApp</p>
         <ul><li>Google Meu Negócio completo</li><li>Fotos e informações otimizadas</li><li>Resposta às avaliações</li></ul>
-        <a class="btn btn--outline btn--block js-wa" data-msg="Olá! Tenho interesse no plano Essencial." href="#contato">Começar</a>
+        <a class="btn btn--outline btn--block js-wa" data-msg="Olá! Quero saber o valor do plano Essencial." href="#contato">Ver o preço</a>
       </article>
       <article class="plan plan--featured">
         <span class="plan__badge">Mais escolhido</span>
         <h3>Combo Presença Digital</h3>
         <p class="plan__desc">Tudo para ser encontrado e escolhido.</p>
-        <p class="plan__old">De [PREÇO CHEIO]</p>
-        <p class="plan__price">[SEU PREÇO]</p>
-        <ul><li>Site profissional</li><li>Google Meu Negócio otimizado</li><li>Instagram criado do zero</li><li>[X] postagens por mês</li></ul>
-        <a class="btn btn--y btn--block js-wa" data-msg="Olá! Quero o Combo Presença Digital." href="#contato">Garantir minha vaga</a>
-        <p class="plan__note">Só para os [X] primeiros clientes do mês</p>
+        <div class="censor censor--y" role="img" aria-label="Preço censurado: chame no WhatsApp para saber"><span class="censor__bar" aria-hidden="true">R$ ███,██</span><span class="censor__stamp" aria-hidden="true">CENSURADO</span></div><p class="censor__hint">🔥 Valor de lançamento só no WhatsApp</p>
+        <ul><li>Site profissional</li><li>Google Meu Negócio otimizado</li><li>Instagram criado do zero</li><li>Postagens todo mês</li></ul>
+        <a class="btn btn--y btn--block js-wa" data-msg="Olá! Quero saber o valor do Combo Presença Digital." href="#contato">Descobrir o preço</a>
+        <p class="plan__note">Vagas limitadas por mês</p>
       </article>
       <article class="plan">
         <h3>Gestão Mensal</h3>
         <p class="plan__desc">Para quem quer crescer sem parar.</p>
-        <p class="plan__price">[PREÇO]<small>/mês</small></p>
+        <div class="censor" role="img" aria-label="Preço censurado: chame no WhatsApp para saber"><span class="censor__bar" aria-hidden="true">R$ ███,██</span><span class="censor__stamp" aria-hidden="true">CENSURADO</span></div><p class="censor__hint">👀 Preço revelado no WhatsApp</p>
         <ul><li>Postagens no Instagram e Google</li><li>Calendário mensal de conteúdo</li><li>Atualização do site e do perfil</li></ul>
-        <a class="btn btn--outline btn--block js-wa" data-msg="Olá! Tenho interesse na Gestão Mensal." href="#contato">Quero a gestão</a>
+        <a class="btn btn--outline btn--block js-wa" data-msg="Olá! Quero saber o valor da Gestão Mensal." href="#contato">Ver o preço</a>
       </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= CLIENTES ================= -->
+<section class="clients" id="clientes">
+  <div class="wrap">
+    <p class="kicker kicker--dark">Clientes</p>
+    <h2 class="h2 h2--dark">Sites que já estão <span class="mark">no ar</span>.</h2>
+    <div class="clients__grid" id="clientsGrid">
+      <!-- Os cartões são montados a partir da lista CLIENTES, no script.js -->
+      <a class="client" href="https://fotonoclassico.agenciamaiscriativa.com.br" target="_blank" rel="noopener"><span class="client__name">Foto no Clássico</span><span class="client__url">fotonoclassico.agenciamaiscriativa.com.br</span></a>
+      <a class="client" href="https://noivasemfusca.agenciamaiscriativa.com.br" target="_blank" rel="noopener"><span class="client__name">Noiva sem Fusca</span><span class="client__url">noivasemfusca.agenciamaiscriativa.com.br</span></a>
     </div>
   </div>
 </section>
@@ -369,7 +383,7 @@
     </div>
     <div class="footer__cols">
       <div><h4>Soluções</h4><a href="#solucoes">Criação de sites</a><a href="#solucoes">Google Meu Negócio</a><a href="#solucoes">Instagram</a><a href="#solucoes">Postagens</a><a href="modelos.html">Modelos de site</a></div>
-      <div><h4>Agência</h4><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
+      <div><h4>Agência</h4><a href="#clientes">Clientes</a><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
       <div><h4>Contato</h4><a class="js-wa" data-msg="Olá! Vim pelo site." href="#contato">WhatsApp</a><a class="js-ig" href="#">Instagram</a><a class="js-mail" href="#">E-mail</a></div>
     </div>
   </div>

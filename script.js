@@ -9,6 +9,16 @@ const CONFIG = {
   offerEnds: null,
 };
 
+/* ============================================
+   CLIENTES — para adicionar um cliente novo, copie uma linha e troque os dados.
+   ramo e foto são opcionais. foto: nome de um arquivo enviado junto com o site
+   (ex.: "clientes/foto-no-classico.jpg"), de preferência um print da página inicial.
+   ============================================ */
+const CLIENTES = [
+  { nome: "Foto no Clássico", url: "https://fotonoclassico.agenciamaiscriativa.com.br", ramo: "Cabine de fotos na Kombi e no Fusca para casamentos e festas", foto: "" },
+  { nome: "Noiva sem Fusca",  url: "https://noivasemfusca.agenciamaiscriativa.com.br", ramo: "Fusca vermelho 1962 como carro da noiva no Rio", foto: "" },
+];
+
 const waLink = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
 const ext = (a) => { a.target = "_blank"; a.rel = "noopener"; };
 document.querySelectorAll(".js-wa").forEach((a) => { a.href = waLink(a.dataset.msg || "Olá! Vim pelo site."); ext(a); });
@@ -133,4 +143,19 @@ if (!reduce && "IntersectionObserver" in window) {
   els.forEach((el) => el.classList.add("rv"));
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   els.forEach((el) => io.observe(el));
+}
+
+/* Cartões de clientes */
+const cg = document.getElementById("clientsGrid");
+if (cg && Array.isArray(CLIENTES)) {
+  const e = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  cg.innerHTML = CLIENTES.map((c) => {
+    const dom = c.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    const ini = c.nome.split(/\s+/).filter((w) => w.length > 2 || /^[A-Z]/.test(w)).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
+    const vis = c.foto ? `<img src="${e(c.foto)}" alt="" loading="lazy">` : `<span class="client__mono" aria-hidden="true">${e(ini)}</span>`;
+    return `<a class="client" href="${e(c.url)}" target="_blank" rel="noopener">
+      <span class="client__shot"><span class="client__bar" aria-hidden="true"><i></i><i></i><i></i><em>${e(dom)}</em></span><span class="client__view">${vis}</span></span>
+      <span class="client__body"><span class="client__name">${e(c.nome)}</span>${c.ramo ? `<span class="client__ramo">${e(c.ramo)}</span>` : ""}<span class="client__url">Ver site <span aria-hidden="true">↗</span></span></span>
+    </a>`;
+  }).join("") + `<a class="client client--next js-wa" href="${waLink("Olá! Quero ser o próximo cliente da Criativa+.")}" target="_blank" rel="noopener"><span class="client__plus" aria-hidden="true">+</span><span class="client__name">O próximo pode ser o seu</span><span class="client__url">Falar no WhatsApp →</span></a>`;
 }

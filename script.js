@@ -2,83 +2,135 @@
    CONFIGURAÇÃO — edite só aqui
    ============================================ */
 const CONFIG = {
-  // WhatsApp com DDI + DDD + número, só dígitos. Ex.: 5511999998888
-  whatsapp: "5521970084480",
-  // Usuário do Instagram, sem @
-  instagram: "seuinstagram",
-  // E-mail de contato
-  email: "contato@seudominio.com.br",
+  whatsapp: "5521970084480",            // DDI + DDD + número, só dígitos
+  instagram: "seuinstagram",            // sem @
+  email: "contato@agenciamaiscriativa.com.br",
+  // Fim da oferta. null = último dia de cada mês. Ou data fixa: "2026-12-15T23:59:59-03:00"
+  offerEnds: null,
 };
 
-/* Links de WhatsApp com mensagem pronta */
-document.querySelectorAll(".js-wa").forEach((a) => {
-  const msg = a.dataset.msg || "Olá! Vim pelo site.";
-  a.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
-  a.target = "_blank";
-  a.rel = "noopener";
-});
-document.querySelectorAll(".js-ig").forEach((a) => {
-  a.href = `https://instagram.com/${CONFIG.instagram}`;
-  a.target = "_blank";
-  a.rel = "noopener";
-});
-document.querySelectorAll(".js-mail").forEach((a) => {
-  a.href = `mailto:${CONFIG.email}`;
-});
-
-/* Ano no rodapé */
+const waLink = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+const ext = (a) => { a.target = "_blank"; a.rel = "noopener"; };
+document.querySelectorAll(".js-wa").forEach((a) => { a.href = waLink(a.dataset.msg || "Olá! Vim pelo site."); ext(a); });
+document.querySelectorAll(".js-ig").forEach((a) => { a.href = `https://instagram.com/${CONFIG.instagram}`; ext(a); });
+document.querySelectorAll(".js-mail").forEach((a) => (a.href = `mailto:${CONFIG.email}`));
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* Menu mobile */
+/* Nav */
+const nav = document.querySelector("[data-nav]");
+const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 40);
+window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 const toggle = document.querySelector(".nav__toggle");
-const menu = document.querySelector(".nav__menu");
-if (toggle && menu) {
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    toggle.setAttribute("aria-label", open ? "Abrir menu" : "Fechar menu");
-    menu.classList.toggle("is-open", !open);
-  });
-  menu.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => {
-      toggle.setAttribute("aria-expanded", "false");
-      menu.classList.remove("is-open");
-    })
-  );
+const menu = document.getElementById("menu");
+toggle.addEventListener("click", () => {
+  const open = toggle.getAttribute("aria-expanded") === "true";
+  toggle.setAttribute("aria-expanded", String(!open));
+  toggle.setAttribute("aria-label", open ? "Abrir menu" : "Fechar menu");
+  document.body.classList.toggle("menu-open", !open);
+});
+menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+  toggle.setAttribute("aria-expanded", "false"); document.body.classList.remove("menu-open");
+}));
+
+/* Contagem regressiva */
+const endDate = () => {
+  if (CONFIG.offerEnds) return new Date(CONFIG.offerEnds);
+  const n = new Date(); return new Date(n.getFullYear(), n.getMonth() + 1, 0, 23, 59, 59);
+};
+const pad = (n) => String(n).padStart(2, "0");
+const tick = () => {
+  let t = Math.max(0, endDate() - new Date());
+  const d = Math.floor(t / 864e5); t -= d * 864e5;
+  const h = Math.floor(t / 36e5); t -= h * 36e5;
+  const m = Math.floor(t / 6e4); t -= m * 6e4;
+  const s = Math.floor(t / 1e3);
+  document.querySelectorAll("[data-countdown]").forEach((el) => (el.textContent = `${d}d ${pad(h)}h ${pad(m)}m`));
+  const set = (q, v) => document.querySelectorAll(q).forEach((el) => (el.textContent = pad(v)));
+  set("[data-d]", d); set("[data-h]", h); set("[data-m]", m); set("[data-s]", s);
+};
+tick(); setInterval(tick, 1000);
+
+/* Mensagens que chegam no hero */
+const toastText = document.querySelector("[data-toast]");
+const toastBox = document.querySelector(".toast");
+if (toastText && !reduce) {
+  const msgs = [
+    "Olá! Vi vocês no Google e quero um orçamento.",
+    "Vocês abrem no sábado?",
+    "Vi o post no Instagram, ainda tem a promoção?",
+    "Achei pelo mapa. Como faço para agendar?",
+  ];
+  let k = 0;
+  setInterval(() => {
+    toastBox.classList.add("is-swap");
+    setTimeout(() => { k = (k + 1) % msgs.length; toastText.textContent = msgs[k]; toastBox.classList.remove("is-swap"); }, 350);
+  }, 3800);
 }
 
-/* Header com sombra ao rolar */
-const header = document.querySelector(".header");
-const onScroll = () => header && header.classList.toggle("is-scrolled", window.scrollY > 10);
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
-
-/* Digitação na barra de busca do hero */
-const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* Digitação na busca */
 const typing = document.querySelector("[data-typing]");
 if (typing && !reduce) {
   const terms = ["pizzaria perto de mim", "dentista perto de mim", "salão de beleza perto de mim", "oficina perto de mim"];
-  let t = 0, i = terms[0].length, deleting = true;
-  const tick = () => {
-    const word = terms[t];
-    i += deleting ? -1 : 1;
-    typing.textContent = word.slice(0, i);
-    let delay = deleting ? 35 : 70;
-    if (!deleting && i === word.length) { deleting = true; delay = 1600; }
-    else if (deleting && i === 0) { deleting = false; t = (t + 1) % terms.length; delay = 300; }
-    setTimeout(tick, delay);
+  let t = 0, i = terms[0].length, del = true;
+  const step = () => {
+    const w = terms[t]; i += del ? -1 : 1; typing.textContent = w.slice(0, i);
+    let dl = del ? 35 : 75;
+    if (!del && i === w.length) { del = true; dl = 1800; }
+    else if (del && i === 0) { del = false; t = (t + 1) % terms.length; dl = 300; }
+    setTimeout(step, dl);
   };
-  setTimeout(tick, 1200);
+  setTimeout(step, 2000);
 }
 
-/* Revelar seções ao rolar */
+/* Diagnóstico */
+const quiz = document.querySelector("[data-quiz]");
+if (quiz) {
+  const qs = [...quiz.querySelectorAll(".q")];
+  const bar = quiz.querySelector("[data-progress]");
+  const stepEl = quiz.querySelector("[data-step]");
+  const top = quiz.querySelector(".qcard__top");
+  const res = quiz.querySelector("[data-result]");
+  const gauge = quiz.querySelector("[data-gauge]");
+  const C = 2 * Math.PI * 52;
+  let i = 0, pts = 0, probs = [];
+  const show = () => { qs.forEach((q, k) => q.classList.toggle("is-active", k === i)); stepEl.textContent = i + 1; bar.style.width = `${(i / qs.length) * 100}%`; };
+  const finish = () => {
+    qs.forEach((q) => q.classList.remove("is-active"));
+    top.hidden = true; res.hidden = false;
+    const nota = 10 - pts;
+    quiz.querySelector("[data-score]").textContent = nota;
+    gauge.style.strokeDasharray = C;
+    gauge.style.strokeDashoffset = C;
+    requestAnimationFrame(() => requestAnimationFrame(() => (gauge.style.strokeDashoffset = C * (1 - nota / 10))));
+    const v = quiz.querySelector("[data-verdict]"), tx = quiz.querySelector("[data-text]");
+    if (nota <= 4) { v.textContent = "Alerta: você está perdendo clientes."; tx.textContent = "Sua empresa está praticamente invisível para quem procura na internet. A boa notícia: dá para virar esse jogo rápido."; }
+    else if (nota <= 8) { v.textContent = "Tem cliente escapando."; tx.textContent = "Você já tem uma base, mas ainda há buracos por onde clientes vão para o concorrente. Vamos fechar cada um."; }
+    else { v.textContent = "Muito bem. Agora é acelerar."; tx.textContent = "Sua presença está no caminho. O próximo passo é crescer: mais conteúdo, mais avaliações, mais contatos."; }
+    const msg = probs.length
+      ? `Olá! Fiz o diagnóstico no site e minha presença digital tirou nota ${nota}/10 (${probs.join(", ")}). Quero meu plano grátis!`
+      : `Olá! Fiz o diagnóstico no site e tirei nota ${nota}/10. Quero acelerar meu crescimento!`;
+    const cta = quiz.querySelector(".js-wa-quiz"); cta.href = waLink(msg); ext(cta);
+    res.focus({ preventScroll: true });
+  };
+  quiz.addEventListener("click", (e) => {
+    const o = e.target.closest(".opt"); if (!o) return;
+    pts += Number(o.dataset.points || 0);
+    if (o.dataset.label) probs.push(o.dataset.label);
+    i++;
+    if (i < qs.length) { show(); qs[i].querySelector(".opt").focus({ preventScroll: true }); } else finish();
+  });
+  quiz.querySelector("[data-restart]").addEventListener("click", () => {
+    i = 0; pts = 0; probs = []; res.hidden = true; top.hidden = false; show();
+    qs[0].querySelector(".opt").focus({ preventScroll: true });
+  });
+  show();
+}
+
+/* Revelar ao rolar */
 if (!reduce && "IntersectionObserver" in window) {
-  const els = document.querySelectorAll(".card, .steps__list li, .pain__list li, .price, details");
-  els.forEach((el) => el.classList.add("reveal"));
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.15 });
+  const els = document.querySelectorAll(".pcard, .tile, .steps li, .plan, .voice__fig, details, .qcard, .problem__title, .solutions .h2, .how .h2");
+  els.forEach((el) => el.classList.add("rv"));
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   els.forEach((el) => io.observe(el));
 }

@@ -3,285 +3,396 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Criativa+ Agência | Sites, Google Meu Negócio e Instagram</title>
-  <meta name="description" content="A Criativa+ Agência cria sites profissionais, gerencia o Google Meu Negócio e cuida do Instagram da sua empresa para você ser encontrado e escolhido pelos clientes.">
-  <meta property="og:title" content="Criativa+ Agência | Sua empresa + vista">
-  <meta property="og:description" content="Sites, Google Meu Negócio, Instagram e postagens para trazer clientes até você.">
+  <title>Criativa+ Agência | Seja encontrado. Seja escolhido.</title>
+  <meta name="description" content="Site profissional, Google Meu Negócio, Instagram e postagens trabalhando juntos para colocar sua empresa na frente do concorrente. Orçamento grátis no WhatsApp.">
+  <meta property="og:title" content="Criativa+ Agência | Seja encontrado. Seja escolhido.">
+  <meta property="og:description" content="Site, Google Meu Negócio e Instagram que trazem clientes. Orçamento grátis no WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="logo.png">
-  <meta name="theme-color" content="#FFCC00">
+  <meta name="theme-color" content="#0B0B0B">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="header">
-  <div class="container header__inner">
-    <a href="#topo" class="header__logo" aria-label="Criativa+ Agência, início">
-      <img src="logo.png" alt="Criativa+ Agência" width="64" height="64">
+<div class="announce">
+  <span class="announce__pill">Novo</span>
+  <span>Oferta de lançamento: Combo Presença Digital com valor especial. Termina em <b class="mono" data-countdown>--d --h --m</b></span>
+  <a href="#planos">Ver planos <span aria-hidden="true">→</span></a>
+</div>
+
+<header class="nav" data-nav>
+  <div class="wrap nav__inner">
+    <a href="#topo" class="nav__brand" aria-label="Criativa+ Agência, início">
+      <span class="nav__logo"><img src="logo.png" alt="" width="40" height="40"></span>
+      <span class="nav__name">Criativa<b>+</b></span>
     </a>
-    <nav class="nav" aria-label="Principal">
-      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__menu" id="menu">
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
-        <li><a href="#combo">Combo</a></li>
-        <li><a href="#duvidas">Dúvidas</a></li>
-        <li><a class="btn btn--dark btn--sm js-wa" data-msg="Olá! Vim pelo site e quero um orçamento." href="#contato">Pedir orçamento</a></li>
-      </ul>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+    <nav class="nav__menu" id="menu" aria-label="Principal">
+      <a href="#solucoes">Soluções</a>
+      <a href="modelos.html">Modelos</a>
+      <a href="#como">Como funciona</a>
+      <a href="#teste">Diagnóstico</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
+      <a class="btn btn--y btn--sm js-wa" data-msg="Olá! Vim pelo site e quero falar com a Criativa+." href="#contato">Falar com a gente</a>
     </nav>
   </div>
 </header>
 
 <main id="conteudo">
 
-  <!-- HERO -->
-  <section class="hero" id="topo">
-    <div class="container hero__grid">
-      <div class="hero__text">
-        <span class="tag">Agência de presença digital</span>
-        <h1>Seu cliente te procura no Google. <mark>Faça ele te encontrar.</mark></h1>
-        <p class="lead">Criamos o seu site, colocamos sua empresa no mapa e deixamos o seu Instagram pronto para vender. Tudo com a cara da sua marca.</p>
-        <div class="hero__ctas">
-          <a class="btn btn--dark btn--lg js-wa" data-msg="Olá! Quero um orçamento para minha empresa." href="#contato">
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
-            Orçamento grátis no WhatsApp
-          </a>
-          <a class="btn btn--ghost btn--lg" href="#servicos">Ver serviços</a>
-        </div>
-        <p class="hero__note">Sem compromisso. Resposta rápida.</p>
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <a href="#teste" class="eyebrow-link"><span class="dot" aria-hidden="true"></span>Diagnóstico grátis em 30 segundos <span aria-hidden="true">→</span></a>
+      <h1 class="hero__title">
+        <span class="line">Seja encontrado.</span>
+        <span class="line">Seja escolhido.</span>
+        <span class="line line--y">Venda mais.</span>
+      </h1>
+      <p class="hero__lead">Site, Google Meu Negócio, Instagram e postagens trabalhando juntos para colocar sua empresa na frente do concorrente, exatamente quando o cliente está procurando.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--y btn--lg js-wa" data-msg="Olá! Quero colocar minha empresa na frente. Pode me passar um orçamento?" href="#contato">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Quero um orçamento grátis
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#solucoes">Conhecer as soluções</a>
       </div>
-
-      <div class="hero__visual" aria-hidden="true">
-        <div class="search">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-          <span class="search__text" data-typing>pizzaria perto de mim</span><span class="search__caret"></span>
-        </div>
-        <div class="mapcard">
-          <div class="mapcard__map">
-            <span class="road road--1"></span><span class="road road--2"></span><span class="road road--3"></span>
-            <span class="dot dot--1"></span><span class="dot dot--2"></span>
-            <span class="pin"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-          </div>
-          <div class="mapcard__body">
-            <div class="mapcard__title"><strong>Sua Empresa</strong><span class="open">Aberto agora</span></div>
-            <span class="mapcard__meta">Primeiro resultado · perto de você</span>
-            <div class="mapcard__chips"><span>Ligar</span><span>Como chegar</span><span>Site</span></div>
-          </div>
-        </div>
-        <svg class="plus plus--hero" viewBox="0 0 132 132"><use href="#plus"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAIXA -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>SITES</span><b>+</b><span>GOOGLE MEU NEGÓCIO</span><b>+</b><span>INSTAGRAM</span><b>+</b><span>POSTAGENS</span><b>+</b>
-      <span>SITES</span><b>+</b><span>GOOGLE MEU NEGÓCIO</span><b>+</b><span>INSTAGRAM</span><b>+</b><span>POSTAGENS</span><b>+</b>
-    </div>
-  </div>
-
-  <!-- DOR -->
-  <section class="pain">
-    <div class="container pain__grid">
-      <h2>Boca a boca é ótimo. <span>Mas não é mais suficiente.</span></h2>
-      <ul class="pain__list">
-        <li><strong>Não aparece no Google?</strong> O cliente vai direto para o concorrente.</li>
-        <li><strong>Sem site?</strong> Fica difícil passar confiança para quem não te conhece.</li>
-        <li><strong>Instagram parado?</strong> Parece que a empresa fechou.</li>
+      <ul class="hero__checks">
+        <li>Sem compromisso</li><li>Resposta rápida</li><li>Atendimento online</li>
       </ul>
     </div>
-  </section>
 
-  <!-- SERVIÇOS -->
-  <section class="services" id="servicos">
-    <div class="container">
-      <span class="tag">Serviços</span>
-      <h2 class="section-title">Tudo o que sua empresa precisa para ser <mark>encontrada e escolhida</mark></h2>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h10"/></svg></div>
-          <span class="card__num">01</span>
-          <h3>Criação de sites</h3>
-          <p>Um site profissional que transforma visita em pedido de orçamento.</p>
-          <ul>
-            <li>Design com a cara da sua marca</li>
-            <li>Perfeito no celular</li>
-            <li>Botão direto pro WhatsApp</li>
-            <li>Estruturado para o Google</li>
-          </ul>
-          <a class="card__link js-wa" data-msg="Olá! Quero um orçamento de site." href="#contato">Quero meu site →</a>
-        </article>
-
-        <article class="card card--dark">
-          <div class="card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-          <span class="card__num">02</span>
-          <h3>Google Meu Negócio</h3>
-          <p>Sua empresa no mapa, na frente de quem já está procurando o que você vende.</p>
-          <ul>
-            <li>Criação e otimização do perfil</li>
-            <li>Fotos, horários e informações em dia</li>
-            <li>Resposta às avaliações</li>
-            <li>Postagens frequentes</li>
-          </ul>
-          <a class="card__link js-wa" data-msg="Olá! Quero aparecer no Google Meu Negócio." href="#contato">Quero aparecer no Google →</a>
-        </article>
-
-        <article class="card">
-          <div class="card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8"/></svg></div>
-          <span class="card__num">03</span>
-          <h3>Criação de Instagram</h3>
-          <p>Seu perfil profissional pronto para atrair seguidores e gerar contatos.</p>
-          <ul>
-            <li>Perfil comercial do zero</li>
-            <li>Bio estratégica com link</li>
-            <li>Destaques com identidade visual</li>
-            <li>Foto de perfil e capas</li>
-          </ul>
-          <a class="card__link js-wa" data-msg="Olá! Quero um Instagram profissional." href="#contato">Quero um perfil profissional →</a>
-        </article>
-
-        <article class="card card--yellow">
-          <div class="card__icon"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><path d="M17.25 13.5v7.5M13.5 17.25H21"/></svg></div>
-          <span class="card__num">04</span>
-          <h3>Postagens</h3>
-          <p>Conteúdo para Instagram e Google Meu Negócio, pensado para gerar mensagens.</p>
-          <ul>
-            <li>Artes com a sua marca</li>
-            <li>Legendas que vendem</li>
-            <li>Calendário mensal</li>
-            <li>Você aprova, a gente publica</li>
-          </ul>
-          <a class="card__link js-wa" data-msg="Olá! Quero saber das postagens." href="#contato">Quero posts que vendem →</a>
-        </article>
+    <!-- Composição de produto -->
+    <div class="stage" aria-hidden="true">
+      <div class="browser">
+        <div class="browser__bar"><i></i><i></i><i></i><span>suaempresa.com.br</span></div>
+        <div class="browser__body">
+          <div class="mini-hero">
+            <div class="mini-hero__txt"><b></b><b></b><span></span><em>Fale no WhatsApp</em></div>
+            <div class="mini-hero__img"></div>
+          </div>
+          <div class="mini-cards"><span></span><span></span><span></span></div>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- COMO FUNCIONA -->
-  <section class="steps" id="como-funciona">
-    <div class="container">
-      <span class="tag tag--light">Como funciona</span>
-      <h2 class="section-title section-title--light">Simples, rápido e sem complicação</h2>
-      <ol class="steps__list">
-        <li>
-          <span class="steps__n">1</span>
-          <h3>Conversa no WhatsApp</h3>
-          <p>Você conta sobre a sua empresa e o que precisa. A gente monta uma proposta sob medida.</p>
-        </li>
-        <li>
-          <span class="steps__n">2</span>
-          <h3>Criamos e você aprova</h3>
-          <p>Desenvolvemos tudo com a identidade da sua marca e ajustamos até ficar do seu jeito.</p>
-        </li>
-        <li>
-          <span class="steps__n">3</span>
-          <h3>Sua empresa no ar</h3>
-          <p>Site publicado, perfil no Google e Instagram prontos para receber clientes.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- COMBO -->
-  <section class="combo" id="combo">
-    <div class="container combo__grid">
-      <div>
-        <span class="sticker">Oferta de lançamento</span>
-        <h2>Combo presença <mark>digital</mark></h2>
-        <ul class="combo__list">
-          <li>Site profissional</li>
-          <li>Google Meu Negócio otimizado</li>
-          <li>Instagram criado do zero</li>
-          <li>[X] postagens por mês</li>
-        </ul>
+      <div class="phone">
+        <div class="phone__notch"></div>
+        <div class="ig">
+          <div class="ig__head"><span class="ig__av">+</span><div><b>suaempresa</b><small>Orçamento pelo WhatsApp ↓</small></div></div>
+          <div class="ig__stats"><span><b>Posts</b></span><span><b>Seguidores</b></span><span><b>Seguindo</b></span></div>
+          <div class="ig__hl"><i></i><i></i><i></i><i></i></div>
+          <div class="ig__grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
       </div>
-      <div class="price">
-        <span class="price__from">De [PREÇO CHEIO]</span>
-        <span class="price__value">[SEU PREÇO]</span>
-        <span class="price__note">Só para os [X] primeiros clientes do mês</span>
-        <a class="btn btn--dark btn--lg btn--block js-wa" data-msg="Olá! Quero garantir o Combo Presença Digital." href="#contato">Garantir minha vaga</a>
+
+      <div class="gcard float-a">
+        <div class="gcard__map"><span class="gcard__pin"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></span></div>
+        <div class="gcard__body">
+          <b>Sua Empresa</b>
+          <span class="stars">★★★★★</span>
+          <span class="open">Aberto agora · Como chegar</span>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="duvidas">
-    <div class="container container--narrow">
-      <span class="tag">Dúvidas</span>
-      <h2 class="section-title">Perguntas frequentes</h2>
-      <details>
-        <summary>Quanto tempo leva para o site ficar pronto?</summary>
-        <p>Em média [PRAZO], depois que recebemos as informações e fotos da sua empresa.</p>
-      </details>
-      <details>
-        <summary>Preciso ter domínio e hospedagem?</summary>
-        <p>Não precisa se preocupar: a gente orienta você na compra do domínio (ex.: suaempresa.com.br) e cuida da publicação do site.</p>
-      </details>
-      <details>
-        <summary>Vocês atendem empresas de outras cidades?</summary>
-        <p>Sim. Todo o atendimento pode ser feito online, pelo WhatsApp e por chamada de vídeo.</p>
-      </details>
-      <details>
-        <summary>Já tenho Google Meu Negócio. Vocês podem cuidar dele?</summary>
-        <p>Sim. Analisamos o seu perfil atual, corrigimos o que estiver faltando e assumimos a gestão.</p>
-      </details>
-      <details>
-        <summary>Como funciona o pagamento?</summary>
-        <p>[FORMAS DE PAGAMENTO, ex.: Pix, cartão em até X vezes].</p>
-      </details>
-    </div>
-  </section>
+      <div class="toast float-b">
+        <span class="toast__ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+        <div><b>Nova mensagem</b><span data-toast>Olá! Vi vocês no Google e quero um orçamento.</span></div>
+      </div>
 
-  <!-- CTA FINAL -->
-  <section class="final" id="contato">
-    <div class="container final__inner">
-      <svg class="plus plus--final" aria-hidden="true" viewBox="0 0 132 132"><use href="#plus"/></svg>
-      <h2>Seu concorrente já está online. <mark>E você?</mark></h2>
-      <p class="lead">Orçamento grátis e sem compromisso. É só mandar um “oi”.</p>
-      <a class="btn btn--dark btn--xl js-wa" data-msg="Olá! Vim pelo site e quero um orçamento." href="#contato">
+      <svg class="stage__plus" viewBox="0 0 132 132"><use href="#plus"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEGMENTOS ================= -->
+<section class="segments" aria-label="Segmentos atendidos">
+  <p class="segments__label">Feito para negócios locais que querem crescer</p>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Restaurantes</span><span>Clínicas</span><span>Salões de beleza</span><span>Oficinas</span><span>Lojas</span><span>Fotógrafos</span><span>Academias</span><span>Pet shops</span><span>Consultórios</span><span>Prestadores de serviço</span>
+      <span>Restaurantes</span><span>Clínicas</span><span>Salões de beleza</span><span>Oficinas</span><span>Lojas</span><span>Fotógrafos</span><span>Academias</span><span>Pet shops</span><span>Consultórios</span><span>Prestadores de serviço</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROBLEMA ================= -->
+<section class="problem">
+  <div class="wrap">
+    <p class="kicker">O problema</p>
+    <h2 class="h2 problem__title">O cliente já decidiu comprar. <span class="muted">A dúvida é de quem.</span></h2>
+    <div class="problem__grid">
+      <article class="pcard">
+        <span class="pcard__n">01</span>
+        <h3>Ele pesquisa no Google.</h3>
+        <p>Se sua empresa não aparece no mapa, com fotos, horário e avaliações, ele clica no concorrente.</p>
+      </article>
+      <article class="pcard">
+        <span class="pcard__n">02</span>
+        <h3>Ele confere o Instagram.</h3>
+        <p>Perfil parado ou amador passa a impressão de empresa fechada ou pouco confiável.</p>
+      </article>
+      <article class="pcard">
+        <span class="pcard__n">03</span>
+        <h3>Ele procura o contato.</h3>
+        <p>Se não acha um site e um WhatsApp em um clique, desiste. E você nem fica sabendo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOLUÇÕES (BENTO) ================= -->
+<section class="solutions" id="solucoes">
+  <div class="wrap">
+    <p class="kicker kicker--dark">As soluções</p>
+    <h2 class="h2 h2--dark">Um ecossistema completo para sua empresa <span class="mark">dominar a busca local.</span></h2>
+
+    <div class="bento">
+      <article class="tile tile--site">
+        <div class="tile__copy">
+          <span class="tile__tag">Criação de sites</span>
+          <h3>Um site que trabalha 24 horas por você.</h3>
+          <p>Design sob medida, rápido, perfeito no celular e com botão direto para o seu WhatsApp.</p>
+          <a class="tile__link js-wa" data-msg="Olá! Quero um site para minha empresa." href="#contato">Quero meu site <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="tile__art art-site" aria-hidden="true">
+          <div class="art-site__win"><div class="art-site__bar"><i></i><i></i><i></i></div><div class="art-site__hero"></div><div class="art-site__row"><i></i><i></i><i></i></div><div class="art-site__btn">WhatsApp</div></div>
+        </div>
+      </article>
+
+      <article class="tile tile--gmn">
+        <span class="tile__tag">Google Meu Negócio</span>
+        <h3>No mapa, na hora da busca.</h3>
+        <p>Perfil completo, fotos, horários, respostas às avaliações e posts frequentes.</p>
+        <div class="art-search" aria-hidden="true">
+          <div class="art-search__bar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span data-typing>pizzaria perto de mim</span><i class="caret"></i></div>
+          <div class="art-search__res"><span class="pin">1</span><div><b>Sua Empresa</b><small>★★★★★ · Aberto agora</small></div></div>
+        </div>
+        <a class="tile__link js-wa" data-msg="Olá! Quero aparecer no Google Meu Negócio." href="#contato">Quero aparecer no Google <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="tile tile--ig">
+        <span class="tile__tag">Criação de Instagram</span>
+        <h3>Um perfil que passa confiança.</h3>
+        <p>Bio estratégica, destaques, identidade visual e link para o WhatsApp.</p>
+        <div class="art-ig" aria-hidden="true"><span class="art-ig__av">+</span><div class="art-ig__hl"><i></i><i></i><i></i></div></div>
+        <a class="tile__link js-wa" data-msg="Olá! Quero um Instagram profissional." href="#contato">Quero um perfil profissional <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="tile tile--posts">
+        <div class="tile__copy">
+          <span class="tile__tag">Postagens</span>
+          <h3>Conteúdo todo mês. Sem você perder tempo.</h3>
+          <p>Artes e legendas pensadas para gerar mensagem, no Instagram e no Google. Você aprova, a gente publica.</p>
+          <a class="tile__link js-wa" data-msg="Olá! Quero posts para minha empresa." href="#contato">Quero posts que vendem <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="art-posts" aria-hidden="true">
+          <i class="p1">OFERTA</i><i class="p2">+</i><i class="p3">DICA</i><i class="p4">NOVO</i><i class="p5">★</i><i class="p6">PROMO</i>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= MODELOS (chamada) ================= -->
+<section class="mteaser" id="modelos">
+  <div class="wrap mteaser__inner">
+    <div>
+      <p class="kicker kicker--dark">Modelos</p>
+      <h2 class="h2 h2--dark" style="margin-bottom:18px">Veja como o site do <span class="mark">seu negócio</span> pode ficar.</h2>
+      <p class="mteaser__lead">Mais de 100 ramos na nossa vitrine. Escolha o seu e veja um modelo pronto. Depois a gente troca o nome, as cores e as fotos pelos da sua empresa.</p>
+      <a class="btn btn--k btn--lg" href="modelos.html">Ver todos os modelos <span aria-hidden="true">→</span></a>
+    </div>
+    <ul class="mteaser__list" aria-label="Ramos com modelo pronto">
+      <li><a href="modelos.html?ramo=barbeiro">Barbearia <small>3 estilos</small></a></li>
+      <li><a href="modelos.html?ramo=manicure">Manicure <small>3 estilos</small></a></li>
+      <li><a href="modelos.html?ramo=banho-e-tosa">Banho e tosa <small>3 estilos</small></a></li>
+      <li><a href="modelos.html?ramo=doces">Doces e confeitaria <small>3 estilos</small></a></li>
+      <li><a href="modelos.html?ramo=marceneiro">Marcenaria <small>3 estilos</small></a></li>
+      <li><a href="modelos.html?ramo=festas">Salão de festas <small>3 estilos</small></a></li>
+      <li><a href="modelos.html?ramo=veiculos">Loja de veículos <small>1 estilo</small></a></li>
+      <li><a href="modelos.html">+ 100 ramos <small>ver vitrine</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section class="how" id="como">
+  <div class="wrap">
+    <p class="kicker">Como funciona</p>
+    <h2 class="h2">Do primeiro “oi” à sua empresa no ar.</h2>
+    <ol class="steps">
+      <li><span class="steps__n">1</span><h3>Diagnóstico</h3><p>Conversamos no WhatsApp, entendemos seu negócio e analisamos o que você já tem.</p></li>
+      <li><span class="steps__n">2</span><h3>Proposta</h3><p>Você recebe um plano sob medida, com o que fazer primeiro e o investimento.</p></li>
+      <li><span class="steps__n">3</span><h3>Criação</h3><p>Criamos tudo com a identidade da sua marca. Você aprova cada etapa.</p></li>
+      <li><span class="steps__n">4</span><h3>No ar e crescendo</h3><p>Site publicado, Google e Instagram prontos. E a gente segue cuidando.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= DIAGNÓSTICO ================= -->
+<section class="quiz" id="teste">
+  <div class="wrap quiz__wrap">
+    <div class="quiz__intro">
+      <p class="kicker">Diagnóstico grátis</p>
+      <h2 class="h2">Sua empresa está <span class="mark">perdendo clientes?</span></h2>
+      <p class="lead">5 perguntas, 30 segundos. Você recebe uma nota da sua presença digital e um plano grátis no WhatsApp.</p>
+    </div>
+
+    <form class="qcard" data-quiz novalidate>
+      <div class="qcard__top"><span class="mono" aria-live="polite"><span data-step>1</span>/<span>5</span></span><div class="qbar" aria-hidden="true"><span data-progress></span></div></div>
+
+      <fieldset class="q is-active"><legend>Quando alguém pesquisa o seu serviço no Google, sua empresa aparece no mapa?</legend>
+        <div class="q__opts"><button type="button" class="opt" data-points="0">Sim, aparece</button><button type="button" class="opt" data-points="2" data-label="não aparece no Google">Não / não sei</button></div></fieldset>
+      <fieldset class="q"><legend>Sua empresa tem um site profissional?</legend>
+        <div class="q__opts"><button type="button" class="opt" data-points="0">Sim, e é bom</button><button type="button" class="opt" data-points="2" data-label="não tem site profissional">Não / está ultrapassado</button></div></fieldset>
+      <fieldset class="q"><legend>O cliente fala com você no WhatsApp em 1 clique, pelo site ou Instagram?</legend>
+        <div class="q__opts"><button type="button" class="opt" data-points="0">Sim</button><button type="button" class="opt" data-points="2" data-label="sem WhatsApp em 1 clique">Não</button></div></fieldset>
+      <fieldset class="q"><legend>Você posta no Instagram pelo menos 3 vezes por semana?</legend>
+        <div class="q__opts"><button type="button" class="opt" data-points="0">Sim</button><button type="button" class="opt" data-points="2" data-label="Instagram parado">Não, fica parado</button></div></fieldset>
+      <fieldset class="q"><legend>Hoje, a maioria dos seus clientes vem de onde?</legend>
+        <div class="q__opts"><button type="button" class="opt" data-points="0">Da internet</button><button type="button" class="opt" data-points="2" data-label="depende do boca a boca">Do boca a boca</button></div></fieldset>
+
+      <div class="qres" data-result hidden tabindex="-1">
+        <div class="gauge" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="gauge__bg"/><circle cx="60" cy="60" r="52" class="gauge__fg" data-gauge/></svg><span data-score>0</span></div>
+        <p class="qres__label">Nota da sua presença digital (de 0 a 10)</p>
+        <p class="qres__verdict" data-verdict></p>
+        <p class="qres__text" data-text></p>
+        <a class="btn btn--y btn--lg btn--block js-wa-quiz" href="#contato">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Receber meu plano grátis
+        </a>
+        <button type="button" class="qres__again" data-restart>Refazer o diagnóstico</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= PLANOS ================= -->
+<section class="plans" id="planos">
+  <div class="wrap">
+    <div class="plans__head">
+      <p class="kicker kicker--dark">Planos</p>
+      <h2 class="h2 h2--dark">Escolha onde sua empresa começa a crescer.</h2>
+      <p class="plans__timer">Oferta de lançamento termina em <span class="timer" data-timer><b data-d>--</b>d <b data-h>--</b>h <b data-m>--</b>m <b data-s>--</b>s</span></p>
+    </div>
+    <div class="plans__grid">
+      <article class="plan">
+        <h3>Essencial</h3>
+        <p class="plan__desc">Para aparecer no Google agora.</p>
+        <p class="plan__price">[PREÇO]</p>
+        <ul><li>Google Meu Negócio completo</li><li>Fotos e informações otimizadas</li><li>Resposta às avaliações</li></ul>
+        <a class="btn btn--outline btn--block js-wa" data-msg="Olá! Tenho interesse no plano Essencial." href="#contato">Começar</a>
+      </article>
+      <article class="plan plan--featured">
+        <span class="plan__badge">Mais escolhido</span>
+        <h3>Combo Presença Digital</h3>
+        <p class="plan__desc">Tudo para ser encontrado e escolhido.</p>
+        <p class="plan__old">De [PREÇO CHEIO]</p>
+        <p class="plan__price">[SEU PREÇO]</p>
+        <ul><li>Site profissional</li><li>Google Meu Negócio otimizado</li><li>Instagram criado do zero</li><li>[X] postagens por mês</li></ul>
+        <a class="btn btn--y btn--block js-wa" data-msg="Olá! Quero o Combo Presença Digital." href="#contato">Garantir minha vaga</a>
+        <p class="plan__note">Só para os [X] primeiros clientes do mês</p>
+      </article>
+      <article class="plan">
+        <h3>Gestão Mensal</h3>
+        <p class="plan__desc">Para quem quer crescer sem parar.</p>
+        <p class="plan__price">[PREÇO]<small>/mês</small></p>
+        <ul><li>Postagens no Instagram e Google</li><li>Calendário mensal de conteúdo</li><li>Atualização do site e do perfil</li></ul>
+        <a class="btn btn--outline btn--block js-wa" data-msg="Olá! Tenho interesse na Gestão Mensal." href="#contato">Quero a gestão</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPOIMENTO ================= -->
+<section class="voice">
+  <div class="wrap">
+    <figure class="voice__fig">
+      <blockquote><p>“Atendimento ótimo! A Agência Mais Criativa veio para revolucionar este mercado!”</p></blockquote>
+      <figcaption><span class="voice__av" aria-hidden="true">F</span><span><b>Foto no Clássico</b><small>Cliente Criativa+</small></span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap faq__wrap">
+    <div>
+      <p class="kicker">Dúvidas</p>
+      <h2 class="h2">Perguntas frequentes</h2>
+      <p class="lead">Não achou o que procurava? <a class="link js-wa" data-msg="Olá! Tenho uma dúvida." href="#contato">Fale com a gente no WhatsApp.</a></p>
+    </div>
+    <div class="faq__list">
+      <details><summary>Não tenho tempo para cuidar disso. E agora?</summary><p>É exatamente por isso que existimos. Você conta sobre a sua empresa, aprova o que criamos e a gente cuida do resto.</p></details>
+      <details><summary>Meus clientes vêm por indicação. Preciso mesmo?</summary><p>Até quem foi indicado pesquisa sua empresa antes de chamar. Se não encontra nada, ou encontra um perfil abandonado, a indicação se perde.</p></details>
+      <details><summary>Quanto tempo leva para ficar pronto?</summary><p>Em média [PRAZO], depois que recebemos as informações e fotos da sua empresa.</p></details>
+      <details><summary>Preciso ter domínio e hospedagem?</summary><p>Não se preocupe: orientamos a compra do domínio (ex.: suaempresa.com.br) e cuidamos da publicação do site.</p></details>
+      <details><summary>Vocês atendem outras cidades?</summary><p>Sim. Todo o atendimento pode ser feito online, por WhatsApp e chamada de vídeo.</p></details>
+      <details><summary>Como funciona o pagamento?</summary><p>[FORMAS DE PAGAMENTO, ex.: Pix ou cartão em até X vezes].</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA FINAL ================= -->
+<section class="cta" id="contato">
+  <div class="wrap cta__inner">
+    <svg class="cta__plus" aria-hidden="true" viewBox="0 0 132 132"><use href="#plus"/></svg>
+    <h2>Enquanto você pensa, <br>seu concorrente aparece.</h2>
+    <p>Comece hoje. O orçamento é grátis e sem compromisso.</p>
+    <div class="cta__actions">
+      <a class="btn btn--k btn--xl js-wa" data-msg="Olá! Vim pelo site e quero começar agora." href="#contato">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
         Chamar no WhatsApp
       </a>
+      <span class="cta__phone">(21) 97008-4480</span>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div class="container footer__inner">
-    <img src="logo.png" alt="Criativa+ Agência" width="88" height="88" class="footer__logo">
-    <ul class="footer__links">
-      <li><a class="js-wa" data-msg="Olá! Vim pelo site." href="#contato">WhatsApp</a></li>
-      <li><a class="js-ig" href="#">Instagram</a></li>
-      <li><a class="js-mail" href="#">E-mail</a></li>
-    </ul>
-    <p class="footer__copy">© <span data-year>2026</span> Criativa+ Agência. Todos os direitos reservados.</p>
+  <div class="wrap footer__top">
+    <div class="footer__brand">
+      <span class="footer__logo"><img src="logo.png" alt="Criativa+ Agência" width="72" height="72"></span>
+      <p>Sites, Google Meu Negócio, Instagram e postagens para negócios locais que querem crescer.</p>
+    </div>
+    <div class="footer__cols">
+      <div><h4>Soluções</h4><a href="#solucoes">Criação de sites</a><a href="#solucoes">Google Meu Negócio</a><a href="#solucoes">Instagram</a><a href="#solucoes">Postagens</a><a href="modelos.html">Modelos de site</a></div>
+      <div><h4>Agência</h4><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
+      <div><h4>Contato</h4><a class="js-wa" data-msg="Olá! Vim pelo site." href="#contato">WhatsApp</a><a class="js-ig" href="#">Instagram</a><a class="js-mail" href="#">E-mail</a></div>
+    </div>
   </div>
+  <div class="wrap footer__bottom">
+    <span>© <span data-year>2026</span> Criativa+ Agência. Todos os direitos reservados.</span>
+    <span>agenciamaiscriativa.com.br</span>
+  </div>
+  <p class="footer__giant" aria-hidden="true">CRIATIVA+</p>
 </footer>
 
-<a class="wa-float js-wa" data-msg="Olá! Vim pelo site e quero um orçamento." href="#contato" aria-label="Falar no WhatsApp">
+<a class="mcta js-wa" data-msg="Olá! Vim pelo site e quero um orçamento." href="#contato">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+  Orçamento grátis no WhatsApp
+</a>
+<a class="wa js-wa" data-msg="Olá! Vim pelo site e quero um orçamento." href="#contato" aria-label="Falar no WhatsApp">
   <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 10h6M9 13h4"/></svg>
 </a>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <g id="plus">
-      <path d="M44 8h32v36h36v32H76v36H44V76H8V44h36z" transform="translate(9,9)" fill="#B38F00" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
-      <path d="M44 8h32v36h36v32H76v36H44V76H8V44h36z" fill="#FFCC00" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
-      <path d="M54 30l2 6M53 92l3 5" stroke="#111" stroke-width="4" stroke-linecap="round"/>
-    </g>
-  </defs>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="plus">
+  <path d="M44 8h32v36h36v32H76v36H44V76H8V44h36z" transform="translate(9,9)" fill="#B38F00" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M44 8h32v36h36v32H76v36H44V76H8V44h36z" fill="#FFCC00" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M54 30l2 6M53 92l3 5" stroke="#111" stroke-width="4" stroke-linecap="round"/>
+</g></defs></svg>
 
 <script src="script.js"></script>
 </body>

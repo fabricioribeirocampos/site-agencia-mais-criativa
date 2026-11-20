@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/modelos/:ramo", "destination": "/modelos?ramo=:ramo", "permanent": false }
+  ]
+}

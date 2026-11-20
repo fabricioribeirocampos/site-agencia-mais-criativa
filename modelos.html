@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modelos de site por ramo | Criativa+ Agência</title>
+  <meta name="description" content="Encontre o seu ramo e veja como o site do seu negócio pode ficar. Mais de 100 ramos: beleza, saúde, casa e reformas, eventos, alimentação e muito mais.">
+  <meta property="og:title" content="Modelos de site para o seu negócio | Criativa+">
+  <meta property="og:description" content="Encontre o seu ramo e veja um modelo pronto. A gente troca o nome, as cores e as fotos pelos da sua empresa.">
+  <meta property="og:image" content="logo.png">
+  <meta name="theme-color" content="#0B0B0B">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .mhero{padding:64px 0 40px;position:relative;overflow:hidden;isolation:isolate}
+    .mhero .hero__glow{top:-420px}
+    .mhero h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:.95;margin:0 0 20px;max-width:900px}
+    .mhero h1 em{font-style:normal;color:var(--y)}
+    .mhero p{color:var(--mut);font-size:1.15rem;max-width:640px}
+    .vitrine{background:var(--paper);color:var(--ink);padding:56px 0 110px;border-radius:40px 40px 0 0}
+    .vsearch{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+    .vsearch label{font-weight:700}
+    .vsearch input{font:inherit;font-size:1.1rem;padding:16px 18px;border:2px solid var(--ink);border-radius:16px;max-width:560px;background:#fff;color:var(--ink)}
+    .vsearch input:focus{outline:3px solid var(--y);outline-offset:2px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+    .chip{font:600 .95rem var(--body);padding:10px 16px;border-radius:999px;border:1.5px solid rgba(0,0,0,.18);background:#fff;color:var(--ink);cursor:pointer;min-height:44px}
+    .chip[aria-pressed="true"]{background:var(--ink);color:var(--y);border-color:var(--ink)}
+    .tags{display:none;flex-wrap:wrap;align-items:center;gap:8px;background:#fff6cc;border:1px solid rgba(0,0,0,.12);border-radius:16px;padding:12px 14px;margin-bottom:14px}
+    .tags.on{display:flex}
+    .tags strong{font-size:.9rem;margin-right:4px}
+    .tags .chip{min-height:38px;padding:6px 13px;font-size:.88rem}
+    .count{font-size:.92rem;color:var(--ink2);margin:6px 0 22px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+    .rc{background:#fff;border:1px solid var(--pline);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:transform .2s var(--ease),box-shadow .2s}
+    .rc:hover{transform:translateY(-3px);box-shadow:0 20px 40px -24px rgba(0,0,0,.35)}
+    .rc.ready{border:2px solid var(--ink)}
+    .rc.sel{box-shadow:0 0 0 4px var(--y)}
+    .rc__top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    .rc__cat{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+    .badge{font-size:.75rem;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+    .badge--ok{background:var(--y);color:var(--ink)}
+    .badge--soon{background:#efefec;color:#5a5a5a}
+    .rc h3{font-size:1.3rem;font-weight:800;margin:4px 0 0}
+    .rc p{font-size:.92rem;color:var(--ink2);margin:0}
+    .rc .evt{font-size:.78rem;font-weight:600;color:#6a5a00}
+    .rc__act{margin-top:auto;padding-top:10px}
+    .rc__act .btn{font-size:.9rem}
+    .styles{grid-column:1/-1;background:var(--ink);color:#fff;border-radius:24px;padding:26px;display:none}
+    .styles.on{display:block;animation:rise .4s var(--ease)}
+    .styles h3{font-size:1.6rem;font-weight:800;margin:0 0 6px}
+    .styles>p{color:var(--mut);margin:0 0 18px}
+    .stgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .st{background:#1c1c1c;border:1px solid var(--line2);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px}
+    .st b{font-family:var(--display);font-size:1.25rem;color:var(--y)}
+    .st span{color:#d6d6d6;font-size:.92rem}
+    .st .btn{margin-top:10px;align-self:flex-start}
+    .empty{border:2px dashed var(--ink);border-radius:20px;padding:26px;font-size:1rem;display:none}
+    .empty.on{display:block}
+    .vcta{margin-top:40px;background:var(--y);border-radius:28px;padding:30px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+    .vcta strong{font-family:var(--display);font-size:1.7rem;font-weight:900;display:block;letter-spacing:-.02em}
+    .disc{font-size:.85rem;color:var(--ink2);margin-top:18px}
+    @media (max-width:640px){.vitrine{border-radius:28px 28px 0 0;padding:40px 0 90px}.styles{padding:20px}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#vitrine">Pular para os modelos</a>
+
+<header class="nav" data-nav>
+  <div class="wrap nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="Criativa+ Agência, início">
+      <span class="nav__logo"><img src="logo.png" alt="" width="40" height="40"></span>
+      <span class="nav__name">Criativa<b>+</b></span>
+    </a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+    <nav class="nav__menu" id="menu" aria-label="Principal">
+      <a href="index.html#solucoes">Soluções</a>
+      <a href="modelos.html" aria-current="page" style="color:var(--y)">Modelos</a>
+      <a href="index.html#como">Como funciona</a>
+      <a href="index.html#planos">Planos</a>
+      <a href="index.html#faq">Dúvidas</a>
+      <a class="btn btn--y btn--sm js-wa" data-msg="Olá! Vi os modelos no site e quero falar com a Criativa+." href="#">Falar com a gente</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="mhero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker">Modelos</p>
+      <h1>Veja como o site do <em>seu negócio</em> pode ficar.</h1>
+      <p>Encontre o seu ramo e veja um modelo pronto. Depois a gente troca o nome, as cores e as fotos pelos da sua empresa.</p>
+    </div>
+  </section>
+
+  <section class="vitrine" id="vitrine">
+    <div class="wrap">
+      <div class="vsearch">
+        <label for="busca">Qual é o seu ramo?</label>
+        <input id="busca" type="search" placeholder="Ex.: eletricista, buffet, dentista…" autocomplete="off">
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoria"></div>
+      <div class="tags" id="tags" role="group" aria-label="Tipo de evento"><strong>Tipo de evento:</strong></div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty">Não encontramos esse ramo, mas criamos o seu site do zero. <a class="js-wa link" style="color:var(--ink);font-weight:700" data-msg="Olá! Não achei meu ramo nos modelos e quero um site." href="#">Fale com a gente no WhatsApp</a>.</div>
+
+      <div class="vcta">
+        <div><strong>Não achou o seu ramo?</strong><span>A gente cria o site do zero, com a cara da sua empresa.</span></div>
+        <a class="btn btn--k btn--lg js-wa" data-msg="Olá! Vi os modelos no site e quero um site para o meu negócio." href="#">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+      <p class="disc">As empresas mostradas nos modelos são fictícias, criadas para demonstração.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__top">
+    <div class="footer__brand">
+      <span class="footer__logo"><img src="logo.png" alt="Criativa+ Agência" width="72" height="72"></span>
+      <p>Sites, Google Meu Negócio, Instagram e postagens para negócios locais que querem crescer.</p>
+    </div>
+    <div class="footer__cols">
+      <div><h4>Soluções</h4><a href="index.html#solucoes">Criação de sites</a><a href="index.html#solucoes">Google Meu Negócio</a><a href="index.html#solucoes">Instagram</a><a href="modelos.html">Modelos</a></div>
+      <div><h4>Agência</h4><a href="index.html#como">Como funciona</a><a href="index.html#planos">Planos</a><a href="index.html#faq">Dúvidas</a></div>
+      <div><h4>Contato</h4><a class="js-wa" data-msg="Olá! Vim pelo site." href="#">WhatsApp</a><a class="js-ig" href="#">Instagram</a><a class="js-mail" href="#">E-mail</a></div>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span data-year>2026</span> Criativa+ Agência. Todos os direitos reservados.</span>
+    <span>agenciamaiscriativa.com.br</span>
+  </div>
+  <p class="footer__giant" aria-hidden="true">CRIATIVA+</p>
+</footer>
+
+<a class="mcta js-wa" data-msg="Olá! Vi os modelos no site e quero um orçamento." href="#">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+  Orçamento grátis no WhatsApp
+</a>
+<a class="wa js-wa" data-msg="Olá! Vi os modelos no site e quero um orçamento." href="#" aria-label="Falar no WhatsApp">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 10h6M9 13h4"/></svg>
+</a>
+
+<script src="script.js"></script>
+<script src="modelos.js"></script>
+</body>
+</html>

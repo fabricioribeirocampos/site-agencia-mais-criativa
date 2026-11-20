@@ -15,8 +15,8 @@ const CONFIG = {
    (ex.: "clientes/foto-no-classico.jpg"), de preferência um print da página inicial.
    ============================================ */
 const CLIENTES = [
-  { nome: "Foto no Clássico", url: "https://fotonoclassico.agenciamaiscriativa.com.br", ramo: "Cabine de fotos na Kombi e no Fusca para casamentos e festas", foto: "" },
-  { nome: "Noiva sem Fusca",  url: "https://noivasemfusca.agenciamaiscriativa.com.br", ramo: "Fusca vermelho 1962 como carro da noiva no Rio", foto: "" },
+  { nome: "Foto no Clássico", url: "https://fotonoclassico.agenciamaiscriativa.com.br", ramo: "Cabine de fotos na Kombi e no Fusca para casamentos e festas", foto: "clientes/foto-no-classico.jpg" },
+  { nome: "Noiva sem Fusca",  url: "https://noivasemfusca.agenciamaiscriativa.com.br", ramo: "Fusca vermelho 1962 como carro da noiva no Rio", foto: "clientes/noiva-sem-fusca.jpg" },
 ];
 
 const waLink = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
